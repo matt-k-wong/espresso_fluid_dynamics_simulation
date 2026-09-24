@@ -151,3 +151,18 @@ README.md, ARCHITECTURE.md, REPORT.md
 - Compaction sweep (illustrative params): Q(p) monotonic and concave, no peak
   at any tested pressure (1–16 bar), perforation, or compaction strength;
   shape unchanged under grid refinement. See `REPORT.md`.
+
+## Example figures (synthetic fixtures only — not measured coffee)
+
+Regenerate with `PYTHONPATH=src ./.venv/bin/python scripts/make_figures.py`.
+Solid = observed synthetic traces; dashed = simulated constant-flow baseline.
+
+![Synthetic mass vs time with constant-flow baseline](docs/figures/shot_mass.svg)
+
+![Synthetic derived flow, 2 s window](docs/figures/shot_flow.svg)
+
+![Held-out residuals vs baseline, synthetic](docs/figures/heldout_residuals.svg)
+
+Linear trace slope 1.2 g/s recovered exactly; held-out RMSE 0.0000 g on
+synthetic data. Cup-EY demo: 36 g × 8.5 % / 18 g = 17.0 %. No TDS means no
+EY — ever. Real-shot validation is still open (see `SHOT_DATA.md`).

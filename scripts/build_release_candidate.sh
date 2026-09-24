@@ -25,6 +25,7 @@ mkdir -p "$DEST/src/espresso_m1"
 for f in src/espresso_m1/*.py src/espresso_m1/catalog.json; do cp "$f" "$DEST/$f"; done
 mkdir -p "$DEST/examples/shots"; cp examples/shots/synthetic_* "$DEST/examples/shots/"
 mkdir -p "$DEST/templates"; cp templates/shot_template.json templates/series_template.csv templates/README.md "$DEST/templates/"
+mkdir -p "$DEST/docs/figures"; cp docs/figures/*.svg "$DEST/docs/figures/"
 mkdir -p "$DEST/tests"
 for f in tests/*.py; do cp "$f" "$DEST/$f"; done
 if [ -d tests/fixtures ]; then mkdir -p "$DEST/tests/fixtures"; cp -R tests/fixtures/* "$DEST/tests/fixtures/"; fi
