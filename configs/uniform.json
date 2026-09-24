@@ -1,0 +1,23 @@
+{
+ "L": 0.02,
+ "Nr": 20,
+ "Nz": 40,
+ "R": 0.029,
+ "R_perf": 0.029,
+ "k0": 5e-15,
+ "linear_solver": "spsolve",
+ "max_iter": 100,
+ "mu": 0.0003,
+ "p_in": 900000.0,
+ "p_out": 0.0,
+ "permeability_mode": "uniform",
+ "phi0": 0.35,
+ "phi_min": 0.2,
+ "relaxation": 1.0,
+ "sigma_c": 200000.0,
+ "sigma_eff_top": 10000.0,
+ "tol_p_rel": 1e-08,
+ "tol_q_rel": 1e-08,
+ "tol_res_rel": 1e-06,
+ "tol_p_atol_Pa": 1e-06
+}

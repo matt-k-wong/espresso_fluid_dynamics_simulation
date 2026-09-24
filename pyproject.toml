@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "espresso-m1"
+version = "0.1.0"
+description = "Milestone 1: 2D axisymmetric single-phase Darcy-flow solver for an espresso packed bed"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+espresso-m1 = "espresso_m1.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+espresso_m1 = ["catalog.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,246 @@
+{
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "checks": [
+    {
+      "name": "honest_convergence_relaxation_1",
+      "passed": true,
+      "converged": true,
+      "iters": 18,
+      "Q_mLs": 0.24676145522535323,
+      "reported_res_rel": 6.361605564050729e-10,
+      "recomputed_Ap_minus_b_m3s": 1.5697985616591804e-16,
+      "mismatch_rel": 5.339951552526976e-10,
+      "max_cell_residual_rel": 6.361605567447795e-10
+    },
+    {
+      "name": "honest_convergence_relaxation_1e-08",
+      "passed": true,
+      "converged": false,
+      "iters": 100
+    },
+    {
+      "name": "honest_convergence_relaxation_1e-12",
+      "passed": true,
+      "converged": false,
+      "iters": 100
+    },
+    {
+      "name": "equal_pressure_equilibrium",
+      "passed": true,
+      "converged": true,
+      "error": ""
+    },
+    {
+      "name": "reject_unresolved_nonzero_opening",
+      "passed": true,
+      "rejection": "R_perf=2.030000e-04 m opens no bottom columns on this grid (Nr=8, dr=3.625000e-03 m, innermost cell center r=1.812500e-03 m, requested open area pi*R_perf^2=1.294619e-07 m^2). This is an under-resolved opening, not a sealed bed: increase Nr (finer dr) or increase R_perf so that at least the innermost cell center satisfies r_center < R_perf. Use R_perf=0 for an intentionally sealed bed."
+    },
+    {
+      "name": "reject_fractional_grid_size",
+      "passed": true
+    },
+    {
+      "name": "reject_infinite_viscosity",
+      "passed": true
+    },
+    {
+      "name": "reject_infinite_pressure",
+      "passed": true
+    },
+    {
+      "name": "reject_boolean_iteration_count",
+      "passed": true
+    },
+    {
+      "name": "pressure_range_does_not_overshoot",
+      "passed": true,
+      "values_Pa": [
+        100000.0,
+        160000.0
+      ]
+    },
+    {
+      "name": "failure_removes_previous_success_artifacts",
+      "passed": true,
+      "files_after_failure": [
+        "failure.json"
+      ]
+    },
+    {
+      "name": "success_removes_previous_failure_artifact",
+      "passed": true
+    },
+    {
+      "name": "empty_sweep_is_not_success",
+      "passed": true,
+      "result": 2
+    },
+    {
+      "name": "zero_flow_summary_is_strict_json",
+      "passed": true
+    },
+    {
+      "name": "nonlinear_full_open_matches_independent_integral",
+      "passed": true,
+      "errors": [
+        0.0011422530241422812,
+        0.0002857955806859769,
+        7.146409053382374e-05,
+        1.7867635237145407e-05
+      ]
+    },
+    {
+      "name": "perforated_solution_approaches_transform_reference",
+      "passed": true,
+      "errors": [
+        0.003091475896758844,
+        0.001169892080981283,
+        0.00037429968688273973,
+        0.00011322737120744719
+      ]
+    },
+    {
+      "name": "manufactured_2d_second_order_accuracy",
+      "passed": true,
+      "grids": [
+        {
+          "Nr": 8,
+          "Nz": 16,
+          "volume_weighted_L2_over_amplitude": 0.0009867151436314231
+        },
+        {
+          "Nr": 16,
+          "Nz": 32,
+          "volume_weighted_L2_over_amplitude": 0.00024457782031034976
+        },
+        {
+          "Nr": 32,
+          "Nz": 64,
+          "volume_weighted_L2_over_amplitude": 6.104104079081041e-05
+        },
+        {
+          "Nr": 64,
+          "Nz": 128,
+          "volume_weighted_L2_over_amplitude": 1.5254301227241982e-05
+        }
+      ]
+    }
+  ],
+  "observations": {
+    "nonlinear_reference": {
+      "Q_exact_full_mLs": 0.4687763667883215,
+      "compaction_to_uniform_ratio": 0.23656940461045026,
+      "grid_runs": [
+        {
+          "Nr": 10,
+          "Nz": 20,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.4682409055657097,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": -0.0011422530241422812
+        },
+        {
+          "Nr": 10,
+          "Nz": 20,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.2503082975767535,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": 0.003091475896758844
+        },
+        {
+          "Nr": 20,
+          "Nz": 40,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.4686423925743616,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": -0.0002857955806859769
+        },
+        {
+          "Nr": 20,
+          "Nz": 40,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.25752086763741494,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": 0.001169892080981283
+        },
+        {
+          "Nr": 40,
+          "Nz": 80,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.46874286611161126,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": -7.146409053382374e-05
+        },
+        {
+          "Nr": 40,
+          "Nz": 80,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.2612717314875582,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": 0.00037429968688273973
+        },
+        {
+          "Nr": 80,
+          "Nz": 160,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.4687679908631741,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": -1.7867635237145407e-05
+        },
+        {
+          "Nr": 80,
+          "Nz": 160,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.2632084680252465,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": 0.00011322737120744719
+        }
+      ]
+    }
+  },
+  "submission_sha256": {
+    "ARCHITECTURE.md": "65648e1f671bb325f702d1208349bcff6c404f0716fea5bdb954f96f33e1fb53",
+    "README.md": "fe9e7c01ea2f16e883cceb700b4342d6c916155eadabaa27351927297babfcf4",
+    "REPORT.md": "80e20f8d8af7d217449c2512b94e232b589c508b46bb3dd08251802a1a769e05",
+    "configs/default.json": "8062caa433117e061dca39f301464bbfa3320d2b1c24392c62056a5cfe2c7c9b",
+    "configs/transport_extraction.json": "677a2e42acee23d68f23e5791f58a8d6fe80b180315aca49cbbbc3bfa4651e31",
+    "configs/transport_tracer.json": "0b588829d32e582476490057ed4098f1c90bc770a9f9de553c277dac26fc29f9",
+    "configs/uniform.json": "b31b7e6424b19be5d5faa45099b9d27e3843c775f287ae68ad3fc4008128556e",
+    "pyproject.toml": "ccedee4d1ed147187c33635274cb230c4c00df6bfac823e9765d485e5ea2557d",
+    "src/espresso_m1/__init__.py": "5cc6e8f1984337b21ec07455fef3cc0813ce023efcbc7003cd7ffcf19b7c1383",
+    "src/espresso_m1/assembly.py": "5791c5c562b2c9e89b3bd40335ba478de41647624a9972743476a2696dc152c9",
+    "src/espresso_m1/catalog.json": "3a72b525ccd1f523671b8e174f38882844bf3e915ab36d933675d9a00c9ff5ef",
+    "src/espresso_m1/cli.py": "887ecc8b16fde2550086de929bf7d378400e617a7aa05165cfd85b8fb1b564cf",
+    "src/espresso_m1/closures.py": "2dfaa3b12b4dee39e9fe385d8b9cdb94fc7a899a41466af4d7e58c8630aa01d2",
+    "src/espresso_m1/diagnostics.py": "08d25ba89d92f60b1e45311e3c87aa6cc2f613159477b21753c4613c1a9e7164",
+    "src/espresso_m1/driver.py": "a2205c13b4341cf685a9456bb6e73add8398485875b2891f413b3fef412f9559",
+    "src/espresso_m1/grid.py": "4cbac0ad6660fe8a228e643bcc0b711be3aaa56df8d02bb8a7cb916df1de9668",
+    "src/espresso_m1/params.py": "54847419bb33456a084da2d0e04af7150ff7f12af0d1d33b29c1bf1a70e72dca",
+    "src/espresso_m1/solver.py": "f344a8fdf24d73e56dc6a85cd9a084e7bd71766ccc05768f9260d29a2324d00f",
+    "src/espresso_m1/tparams.py": "908d2c4b5855ab1495bd4af2f66d8afcfb35f3ce74d3edfd97b74a1a6d24ca3f",
+    "src/espresso_m1/transport.py": "78cf1a896dfec430349489b543ad220b15f8c1fc6c31536c5350daaeebbbdf23",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/conftest.py": "1b530f310efb08c9e6990da9ab7349406f36f3a8fb8e0d5805c6a3f339717724",
+    "tests/test_analytical.py": "5dcbc635e59f837e388030b71243ec3e0dc57b633b0bb3bdb6d7ee5a3fb0ee01",
+    "tests/test_artifacts.py": "1e2e8a45ed311c7d3c1ffeb5e2da34661eac759bdbdc38d36d187a1918578a75",
+    "tests/test_boundaries.py": "77819fb2f027de295bd8d6f1469964735e1219b8ec39d7fe8eb8c1a84a93adf0",
+    "tests/test_conservation.py": "4438f6f635fab2daf59baf8e46b5dfa1b2219d7cc8c4478139d9e8de7c07a51d",
+    "tests/test_convergence_truthful.py": "6a8d3b0bf2090602e0692c8b5286510f16c8822e70d9b82765636a6cfbe5126d",
+    "tests/test_mms.py": "76a3088e6e67f1c5c0b1338d7099eefccda31cb4ebd9f7c9e2a7d56aa471d83b",
+    "tests/test_nonlinear_reference.py": "ee7a27b93a9fb410cb9c14b7944a73d7f2ab5e528bfe83d1c6647f264197fc56",
+    "tests/test_params.py": "b61a3f4331a4cd48fdf016db047263757476b440d07b9dce8d1ab767152ea1bb",
+    "tests/test_physics.py": "bc4ccd0d92aa5c78c2ac76000183df65db3af05221ec09b8e7ff45351946d9bc",
+    "tests/test_transport_batch.py": "2fdcd3e3a4663e80ab19a1b21756cb5cfdbb1280dee59190163a66c8267cf8b8",
+    "tests/test_transport_cli.py": "4a6f17d57f16b9a6a6e88f80b1a7ba7757f1166b49b9c5c1a04fa89390ae889e",
+    "tests/test_transport_dispersion.py": "ff481ddd803a961d2a4837f65e3ee419cf45f2537b6b6a64e8766dbc2045c68d",
+    "tests/test_transport_extraction.py": "548f5e31081cceecce399e68d6578661f7471243a479d91171139a2ea2eb055c",
+    "tests/test_transport_passive.py": "974f645a63ccd0ba84d54bf4e62f121285c25a43cb3d1b501207eb432ac482a0",
+    "tests/test_transport_refinement.py": "ffda932730d1163da4d9073b44a285f9e4be013dd45dfbc42170d02e4b84e723",
+    "tests/test_transport_residence.py": "3ad450d69b888c856cd912fcd77b7e8c8dba0b198268020dbf1921e902c50f4e",
+    "tests/test_validation.py": "558ba11f7bc633e8eb225578cc0e353ade02cd45be86de57750ee7bbc7d8461a"
+  }
+}

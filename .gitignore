@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+outputs/
+.pytest_cache/
+.DS_Store
+# Private owner data: never shared, never in the release candidate.
+user_data/
+# Generated export (rebuild with sh scripts/build_release_candidate.sh).
+release_candidate/

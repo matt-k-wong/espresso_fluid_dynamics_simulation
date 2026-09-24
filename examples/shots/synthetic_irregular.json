@@ -1,0 +1,50 @@
+{
+  "schema_version": "gs3_shot_v1",
+  "shot_id": "synthetic-irregular-01",
+  "source": "synthetic",
+  "machine": {
+    "profile_id": "example-av-reservoir",
+    "feed": "AV reservoir"
+  },
+  "beans": {
+    "batch": "example-batch",
+    "roast_date": "2026-09-01"
+  },
+  "grinder": {
+    "name": "example-grinder",
+    "setting": 12
+  },
+  "dose_g": 18.0,
+  "basket_id": "example-58mm-double",
+  "beverage_target_g": 36.0,
+  "temperature": {
+    "setting_C": 93.0,
+    "location": "boiler display (not puck)"
+  },
+  "prebrew": null,
+  "time_zero": "pump_activation",
+  "notes": "Synthetic irregularly sampled trace (same 1.2 g/s slope) for importer/metric correctness only. Not measured data.",
+  "cup": {
+    "TDS_pct": null,
+    "method": null,
+    "uncertainty_pct": null
+  },
+  "samples": [
+    {"time_s": 0.0, "beverage_mass_g": 0.0},
+    {"time_s": 0.7, "beverage_mass_g": 0.84},
+    {"time_s": 1.9, "beverage_mass_g": 2.28},
+    {"time_s": 3.1, "beverage_mass_g": 3.72},
+    {"time_s": 5.0, "beverage_mass_g": 6.0},
+    {"time_s": 7.3, "beverage_mass_g": 8.76},
+    {"time_s": 9.1, "beverage_mass_g": 10.92},
+    {"time_s": 10.8, "beverage_mass_g": 12.96},
+    {"time_s": 12.5, "beverage_mass_g": 15.0},
+    {"time_s": 15.2, "beverage_mass_g": 18.24},
+    {"time_s": 17.9, "beverage_mass_g": 21.48},
+    {"time_s": 20.1, "beverage_mass_g": 24.12},
+    {"time_s": 22.8, "beverage_mass_g": 27.36},
+    {"time_s": 25.0, "beverage_mass_g": 30.0},
+    {"time_s": 27.4, "beverage_mass_g": 32.88},
+    {"time_s": 30.0, "beverage_mass_g": 36.0}
+  ]
+}

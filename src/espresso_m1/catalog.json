@@ -1,0 +1,351 @@
+{
+ "note": "Milestone-1 parameter catalog. admissible_range states the constraints enforced by validation; recommended_range is unenforced illustrative guidance (recommended_is_enforced is always false). Pressure is gauge pressure in Pa (0 = atmosphere).",
+ "provenance_labels": [
+  "measured",
+  "literature",
+  "illustrative assumption",
+  "fitted"
+ ],
+ "parameters": {
+  "R": {
+   "description": "Basket inner radius (radial extent, r in [0, R])",
+   "units": "m",
+   "default": 0.029,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "(0, 0.1]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Typical 58 mm basket; uncalibrated example geometry."
+  },
+  "L": {
+   "description": "Bed thickness (axial extent, z in [0, L], z increasing downward)",
+   "units": "m",
+   "default": 0.02,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "(0, 0.1]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Uncalibrated example bed depth for the default dose/grind."
+  },
+  "Nr": {
+   "description": "Number of cell-centered finite volumes in the radial direction",
+   "units": "-",
+   "default": 20,
+   "admissible_range": "integer >= 2",
+   "recommended_range": "[2, 512] integer",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; refinement studies use up to 80."
+  },
+  "Nz": {
+   "description": "Number of cell-centered finite volumes in the axial direction",
+   "units": "-",
+   "default": 40,
+   "admissible_range": "integer >= 2",
+   "recommended_range": "[2, 1024] integer",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; refinement studies use up to 160."
+  },
+  "R_perf": {
+   "description": "Perforated radius of the bottom plate: bottom columns with cell-center r < R_perf are held at p_out; remaining rim has zero normal flux. R_perf = R means a fully open bottom; R_perf = 0 is a valid sealed bed.",
+   "units": "m",
+   "default": 0.029,
+   "admissible_range": "[0, R]",
+   "recommended_range": "[0, R]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Configurable basket-hole layout; example values are illustrative. A positive R_perf that resolves to zero open columns is rejected (see grid docs)."
+  },
+  "mu": {
+   "description": "Liquid dynamic viscosity (dissolved solids neglected)",
+   "units": "Pa s",
+   "default": 0.0003,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "[1e-4, 2e-3]",
+   "recommended_is_enforced": false,
+   "provenance": "literature",
+   "provenance_detail": "IAPWS water transport correlations (Wagner & Pruss 2002; Huber et al. 2009): saturated-liquid water is ~0.31 mPa s at 90 C and ~0.28 at 100 C; 0.30 mPa s is representative. Coffee-liquid viscosity is unmeasured here."
+  },
+  "k0": {
+   "description": "Reference permeability: uniform value in uniform mode; value at reference porosity phi0 in compaction mode",
+   "units": "m^2",
+   "default": 5e-15,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "[1e-16, 1e-10]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Order-of-magnitude placeholder; no bed-permeability measurement is used."
+  },
+  "phi0": {
+   "description": "Reference (uncompacted, zero-effective-stress) porosity",
+   "units": "-",
+   "default": 0.35,
+   "admissible_range": "(0, 1)",
+   "recommended_range": "(0.2, 0.6)",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Placeholder; needs confined-compression data."
+  },
+  "p_in": {
+   "description": "Inlet gauge pressure imposed at the top (z = 0)",
+   "units": "Pa",
+   "default": 900000.0,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 2e6]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Operating point of each run/sweep point, not a material property."
+  },
+  "p_out": {
+   "description": "Outlet gauge pressure imposed on the perforated part of the bottom (0 = discharging to atmosphere)",
+   "units": "Pa",
+   "default": 0.0,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 2e6]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Operating point; atmospheric discharge is the default."
+  },
+  "permeability_mode": {
+   "description": "Permeability closure selector",
+   "units": "-",
+   "default": "uniform",
+   "admissible_range": "uniform | compaction",
+   "recommended_range": "uniform | compaction",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "uniform = verification; compaction = investigative closure with uncalibrated coefficients."
+  },
+  "sigma_eff_top": {
+   "description": "Prescribed effective axial stress at the top boundary (pack load carried by the grain skeleton at the inlet)",
+   "units": "Pa",
+   "default": 10000.0,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 1e6]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Placeholder load; needs mechanical measurement."
+  },
+  "sigma_c": {
+   "description": "Characteristic effective stress of the exponential porosity law; smaller values mean stronger compaction",
+   "units": "Pa",
+   "default": 200000.0,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "(0, 1e6]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Uncalibrated; controls where the Q(p) rollover sets in."
+  },
+  "phi_min": {
+   "description": "Minimum (fully compacted) porosity; lower bound of the porosity law, keeps permeability strictly positive",
+   "units": "-",
+   "default": 0.2,
+   "admissible_range": "(0, phi0)",
+   "recommended_range": "(0, phi0)",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Placeholder; controls the high-pressure flow asymptote and solver stiffness."
+  },
+  "tol_p_rel": {
+   "description": "Picard convergence tolerance: pressure update relative to the imposed pressure difference",
+   "units": "-",
+   "default": 1e-08,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "(0, 1e-2]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting."
+  },
+  "tol_p_atol_Pa": {
+   "description": "Picard convergence tolerance: absolute floor for the pressure update",
+   "units": "Pa",
+   "default": 1e-06,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "[1e-9, 1e-3]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; required for equal-pressure equilibria."
+  },
+  "tol_q_rel": {
+   "description": "Picard convergence tolerance: outlet-flow update, relative with an absolute flow floor",
+   "units": "-",
+   "default": 1e-08,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "(0, 1e-2]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting."
+  },
+  "tol_res_rel": {
+   "description": "Picard convergence tolerance: local/global mass balance relative to max(|Q_in|, |Q_out|)",
+   "units": "-",
+   "default": 1e-06,
+   "admissible_range": "(0, +inf)",
+   "recommended_range": "(0, 1e-2]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; a solver tolerance, not a discretization error."
+  },
+  "max_iter": {
+   "description": "Maximum Picard iterations for the pressure/permeability coupling",
+   "units": "-",
+   "default": 100,
+   "admissible_range": "integer >= 1",
+   "recommended_range": "[1, 10000] integer",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting."
+  },
+  "relaxation": {
+   "description": "Picard relaxation factor applied to the permeability update (1 = no relaxation)",
+   "units": "-",
+   "default": 1.0,
+   "admissible_range": "(0, 1]",
+   "recommended_range": "(0, 1]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; tiny values converge arbitrarily slowly and must report nonconvergence, not success."
+  },
+  "linear_solver": {
+   "description": "Sparse linear solver for the assembled pressure system (fixed in milestone 1; SPD system, direct SuperLU)",
+   "units": "-",
+   "default": "spsolve",
+   "admissible_range": "spsolve",
+   "recommended_range": "spsolve",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting."
+  },
+  "mode": {
+   "description": "Transport mode: extraction (lumped solid pool + exchange) or tracer (passive, no solid pool)",
+   "units": "-",
+   "default": "extraction",
+   "admissible_range": "extraction | tracer",
+   "recommended_range": "extraction | tracer",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "No measured shot data is used; extraction parameters are unvalidated."
+  },
+  "M_dose": {
+   "description": "Dry coffee dose assigned uniformly by cell bulk volume",
+   "units": "kg",
+   "default": 0.018,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "(0, 0.05]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Example dose; not inferred from the porosity field."
+  },
+  "f_sol": {
+   "description": "Accessible soluble mass fraction of the dry dose (input, not predicted)",
+   "units": "-",
+   "default": 0.25,
+   "admissible_range": "[0, 1]",
+   "recommended_range": "[0, 0.4]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Uncalibrated coffee property placeholder."
+  },
+  "exchange_rate": {
+   "description": "Solid/liquid exchange rate coefficient lambda",
+   "units": "1/s",
+   "default": 0.1,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 10]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Phenomenological rate; uncalibrated. Zero disables exchange."
+  },
+  "K": {
+   "description": "Equilibrium solid solute mass fraction per liquid concentration",
+   "units": "m^3/kg dry coffee",
+   "default": 0.005,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 0.1]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Reversible-partition coefficient; K=0 is irreversible first-order release. Uncalibrated."
+  },
+  "D": {
+   "description": "Isotropic pore-liquid dispersion coefficient",
+   "units": "m^2/s",
+   "default": 1e-09,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 1e-6]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Molecular-diffusion scale placeholder; uncalibrated. Zero disables dispersion."
+  },
+  "rho_solution": {
+   "description": "Cup solution density closure (constant; solute mass is not added again)",
+   "units": "kg/m^3",
+   "default": 1000.0,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "(0, 2000]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Approximate physical closure, not composition-dependent density."
+  },
+  "t_end": {
+   "description": "Final transport time; t=0 is an already wetted bed",
+   "units": "s",
+   "default": 60.0,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "(0, 300]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical/experimental run length, not a material property."
+  },
+  "dt": {
+   "description": "Requested time step (shortened at schedule breakpoints and t_end)",
+   "units": "s",
+   "default": 0.5,
+   "admissible_range": "(0, +inf), finite",
+   "recommended_range": "(0, 5]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting; assess by refinement, not by implicit stability."
+  },
+  "cfl_advective": {
+   "description": "Conservative advective accuracy-limit factor on dt; 0 disables",
+   "units": "-",
+   "default": 0.5,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 1]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Numerical setting."
+  },
+  "C_init": {
+   "description": "Uniform initial liquid concentration",
+   "units": "kg/m^3",
+   "default": 0.0,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 100]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Tracer initial condition; extraction requires 0."
+  },
+  "C_inlet": {
+   "description": "Inlet concentration before the first schedule breakpoint",
+   "units": "kg/m^3",
+   "default": 0.0,
+   "admissible_range": "[0, +inf), finite",
+   "recommended_range": "[0, 100]",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Tracer boundary input; extraction requires 0."
+  },
+  "C_in_schedule": {
+   "description": "Inlet concentration schedule as [[t_s, C_kgm3], ...], piecewise constant",
+   "units": "s, kg/m^3",
+   "default": [],
+   "admissible_range": "nonneg finite sorted pairs",
+   "recommended_range": "file-only",
+   "recommended_is_enforced": false,
+   "provenance": "illustrative assumption",
+   "provenance_detail": "Tracer boundary input; extraction requires all zeros."
+  }
+ }
+}

@@ -1,0 +1,22 @@
+# Software citation. Paper authors below are inspirations/sources, not
+# contributors, unless they actually contributed code (none have).
+cff-version: 1.2.0
+title: "Espresso packed-bed simulation engine (research/education candidate, uncalibrated)"
+version: 0.1.0
+type: software
+authors:
+  - alias: matt-k-wong
+    website: "https://github.com/matt-k-wong"
+keywords:
+  - espresso
+  - darcy-flow
+  - finite-volumes
+  - reproducibility
+license: "Apache-2.0"
+repository-code: "https://github.com/matt-k-wong/espresso_fluid_dynamics_simulation"
+abstract: >-
+  2D axisymmetric single-phase saturated isothermal Darcy solver with a
+  pressure-dependent permeability closure, plus frozen-hydraulic transient
+  transport/lumped exchange and a GS3 shot-data comparison baseline.
+  Code verification only; transport coefficients illustrative; no measured
+  coffee validation. Not a pressure-optimum, flavor, or digital-twin claim.

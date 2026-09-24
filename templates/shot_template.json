@@ -1,0 +1,33 @@
+{
+  "schema_version": "gs3_shot_v1",
+  "shot_id": "REPLACE-with-shot-id-e.g-2026-09-23-001",
+  "source": "measured",
+  "machine": {
+    "profile_id": "REPLACE-e.g-early-GS3-AV-reservoir",
+    "feed": "AV reservoir"
+  },
+  "beans": {
+    "batch": "REPLACE-bean-batch-or-null",
+    "roast_date": "REPLACE-YYYY-MM-DD-or-null"
+  },
+  "grinder": {
+    "name": "REPLACE-grinder-name",
+    "setting": "REPLACE-ordinal-setting-e.g-12-NOT-particle-diameter-um"
+  },
+  "dose_g": "REPLACE-e.g-18.0",
+  "basket_id": "REPLACE-e.g-58mm-double-VST-18-or-null",
+  "beverage_target_g": "REPLACE-e.g-36.0-or-null",
+  "temperature": {
+    "setting_C": "REPLACE-e.g-93.0-or-null",
+    "location": "REPLACE-e.g-boiler-display-NOT-puck-unless-measured-at-puck"
+  },
+  "prebrew": null,
+  "time_zero": "REPLACE-pump_activation-or-first_liquid-or-already_wet",
+  "notes": "REPLACE-taste-prep-notes. Do NOT put exact machine serial here for shared files.",
+  "cup": {
+    "TDS_pct": null,
+    "method": null,
+    "uncertainty_pct": null
+  },
+  "samples": "REPLACE-either-inline-samples-list-OR-remove-and-supply-external-CSV-via---series"
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "gs3_shot_v1",
+  "shot_id": "synthetic-no-tds-01",
+  "source": "synthetic",
+  "machine": {
+    "profile_id": "example-av-reservoir",
+    "feed": "AV reservoir"
+  },
+  "beans": {
+    "batch": "example-batch",
+    "roast_date": "2026-09-01"
+  },
+  "grinder": {
+    "name": "example-grinder",
+    "setting": 14
+  },
+  "dose_g": 18.0,
+  "basket_id": "example-58mm-double",
+  "beverage_target_g": 36.0,
+  "temperature": {
+    "setting_C": 93.0,
+    "location": "boiler display (not puck)"
+  },
+  "prebrew": null,
+  "time_zero": "first_liquid",
+  "notes": "Synthetic fixture with explicit missing TDS for importer/metric correctness only. EY must be missing (no inference). Not measured data.",
+  "cup": {
+    "TDS_pct": null,
+    "method": null,
+    "uncertainty_pct": null
+  },
+  "samples": [
+    {"time_s": 0.0, "beverage_mass_g": 0.0},
+    {"time_s": 5.0, "beverage_mass_g": 5.5},
+    {"time_s": 10.0, "beverage_mass_g": 12.0},
+    {"time_s": 15.0, "beverage_mass_g": 18.5},
+    {"time_s": 20.0, "beverage_mass_g": 25.0},
+    {"time_s": 25.0, "beverage_mass_g": 31.0},
+    {"time_s": 30.0, "beverage_mass_g": 36.2}
+  ]
+}

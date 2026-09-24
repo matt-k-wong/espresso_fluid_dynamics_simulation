@@ -1,0 +1,270 @@
+{
+  "environment": {
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "checks": [
+    {
+      "name": "honest_convergence_relaxation_1",
+      "passed": true,
+      "converged": true,
+      "iters": 19,
+      "Q_mLs": 0.24676145509442987,
+      "reported_res_rel": 1.1817199867982866e-11,
+      "recomputed_Ap_minus_b_m3s": 6.194720615371769e-17,
+      "mismatch_rel": 4.982266232697079e-11,
+      "max_cell_residual_rel": 2.5104048762520324e-10
+    },
+    {
+      "name": "honest_convergence_relaxation_1e-08",
+      "passed": false,
+      "converged": true,
+      "iters": 3,
+      "Q_mLs": 0.1625341242821853,
+      "reported_res_rel": 1.1609139839070962e-11,
+      "recomputed_Ap_minus_b_m3s": 1.2969925742057511e-08,
+      "mismatch_rel": 0.20572265429444156,
+      "max_cell_residual_rel": 0.07979817038013536
+    },
+    {
+      "name": "honest_convergence_relaxation_1e-12",
+      "passed": false,
+      "converged": true,
+      "iters": 3,
+      "Q_mLs": 0.16253412284010893,
+      "reported_res_rel": 1.1290688875656727e-15,
+      "recomputed_Ap_minus_b_m3s": 1.2969926179881925e-08,
+      "mismatch_rel": 0.20572265956004285,
+      "max_cell_residual_rel": 0.07979817378188973
+    },
+    {
+      "name": "equal_pressure_equilibrium",
+      "passed": false,
+      "converged": false,
+      "error": "Picard iteration did not converge in 100 iterations (dp_rel=1.019e-14, dq_rel=7.646e-04, res_rel=3.843e-16)"
+    },
+    {
+      "name": "reject_unresolved_nonzero_opening",
+      "passed": false,
+      "converged": true,
+      "ideal_open_area": 1.2946189166178179e-07,
+      "discrete_open_area": 0.0
+    },
+    {
+      "name": "reject_fractional_grid_size",
+      "passed": false,
+      "result": "accepted"
+    },
+    {
+      "name": "reject_infinite_viscosity",
+      "passed": false,
+      "result": "accepted"
+    },
+    {
+      "name": "reject_infinite_pressure",
+      "passed": false,
+      "result": "accepted"
+    },
+    {
+      "name": "reject_boolean_iteration_count",
+      "passed": false,
+      "result": "accepted"
+    },
+    {
+      "name": "pressure_range_does_not_overshoot",
+      "passed": false,
+      "values_Pa": [
+        100000.0,
+        160000.0,
+        220000.00000000003
+      ]
+    },
+    {
+      "name": "failure_removes_previous_success_artifacts",
+      "passed": false,
+      "files_after_failure": [
+        "failure.json",
+        "fields.npz",
+        "summary.json"
+      ]
+    },
+    {
+      "name": "success_removes_previous_failure_artifact",
+      "passed": false
+    },
+    {
+      "name": "empty_sweep_is_not_success",
+      "passed": false,
+      "result": 0
+    },
+    {
+      "name": "zero_flow_summary_is_strict_json",
+      "passed": false,
+      "error": "NaN"
+    },
+    {
+      "name": "nonlinear_full_open_matches_independent_integral",
+      "passed": true,
+      "errors": [
+        0.0011422536129448435,
+        0.0002857959264385146,
+        7.146437338978462e-05,
+        1.78679049571695e-05
+      ]
+    },
+    {
+      "name": "perforated_solution_approaches_transform_reference",
+      "passed": true,
+      "errors": [
+        0.0030914761559361903,
+        0.0011698932821764263,
+        0.0003743009155239285,
+        0.00011322859233198201
+      ]
+    },
+    {
+      "name": "manufactured_2d_second_order_accuracy",
+      "passed": true,
+      "grids": [
+        {
+          "Nr": 8,
+          "Nz": 16,
+          "volume_weighted_L2_over_amplitude": 0.0009867151436314231
+        },
+        {
+          "Nr": 16,
+          "Nz": 32,
+          "volume_weighted_L2_over_amplitude": 0.00024457782031034976
+        },
+        {
+          "Nr": 32,
+          "Nz": 64,
+          "volume_weighted_L2_over_amplitude": 6.104104079081041e-05
+        },
+        {
+          "Nr": 64,
+          "Nz": 128,
+          "volume_weighted_L2_over_amplitude": 1.5254301227241982e-05
+        }
+      ]
+    },
+    {
+      "name": "installed_package_contains_catalog",
+      "passed": false,
+      "wheel_members": [
+        "espresso_m1/__init__.py",
+        "espresso_m1/assembly.py",
+        "espresso_m1/cli.py",
+        "espresso_m1/closures.py",
+        "espresso_m1/diagnostics.py",
+        "espresso_m1/driver.py",
+        "espresso_m1/grid.py",
+        "espresso_m1/params.py",
+        "espresso_m1/solver.py",
+        "espresso_m1-0.1.0.dist-info/METADATA",
+        "espresso_m1-0.1.0.dist-info/WHEEL",
+        "espresso_m1-0.1.0.dist-info/entry_points.txt",
+        "espresso_m1-0.1.0.dist-info/top_level.txt",
+        "espresso_m1-0.1.0.dist-info/RECORD"
+      ]
+    }
+  ],
+  "observations": {
+    "nonlinear_reference": {
+      "Q_exact_full_mLs": 0.4687763667883215,
+      "compaction_to_uniform_ratio": 0.23656940461045026,
+      "grid_runs": [
+        {
+          "Nr": 10,
+          "Nz": 20,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.46824090528969303,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": -0.0011422536129448435
+        },
+        {
+          "Nr": 10,
+          "Nz": 20,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.25030829764142787,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": 0.0030914761559361903
+        },
+        {
+          "Nr": 20,
+          "Nz": 40,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.468642392412281,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": -0.0002857959264385146
+        },
+        {
+          "Nr": 20,
+          "Nz": 40,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.25752086794638634,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": 0.0011698932821764263
+        },
+        {
+          "Nr": 40,
+          "Nz": 80,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.4687428659790151,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": -7.146437338978462e-05
+        },
+        {
+          "Nr": 40,
+          "Nz": 80,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.26127173180844737,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": 0.0003743009155239285
+        },
+        {
+          "Nr": 80,
+          "Nz": 160,
+          "R_perf_over_R": 1.0,
+          "Q_mLs": 0.4687679907367358,
+          "relative_open_area_error": 0.0,
+          "normalized_flow_ratio_error": -1.78679049571695e-05
+        },
+        {
+          "Nr": 80,
+          "Nz": 160,
+          "R_perf_over_R": 0.5,
+          "Q_mLs": 0.26320846834662043,
+          "relative_open_area_error": -1.1102230246251565e-16,
+          "normalized_flow_ratio_error": 0.00011322859233198201
+        }
+      ]
+    }
+  },
+  "submission_sha256": {
+    "ARCHITECTURE.md": "78591d83e776b0ab0cfcf5d413f9a838a01b1446fb1ccb51f377ca2f9d29411e",
+    "README.md": "8ddeffc06182774f45701640bb1b6bb2b5ee147e88460e35f8ea35d4d0e9e26d",
+    "REPORT.md": "202122467ddd7db48d45e66c061ca53f7e8ed8422c74cf4c135d606b19102c58",
+    "configs/default.json": "cb882008bea1683ecbd15eaa7b89cd2252e505107cefe42ee392f55f23b930e5",
+    "configs/uniform.json": "a5a7dd442405480ee6e89694d6fabc8dd77df81f4ff2793105c12c9f2c61f66a",
+    "pyproject.toml": "950c8a4e70c7113c756142e8a14bc1203488d45e898c08ebc60f27d32b33e1a8",
+    "src/espresso_m1/__init__.py": "d1412838d79070f0512bcad2749ba9fa6b7995506840a9ea6ed0c229390ced91",
+    "src/espresso_m1/assembly.py": "4f120a835c8388ec6c624c91761a13325da35ef59e99e7fcbf63a50333dcbdbe",
+    "src/espresso_m1/catalog.json": "de65c44d07ccf34fd01f06230c3142e1d80b150f1daae629ad00c1723a53d59c",
+    "src/espresso_m1/cli.py": "fa8c6eaf1639928f2096e097a5fc9cf6bfc8120fedf30f21d76ecd4020d6031e",
+    "src/espresso_m1/closures.py": "2dfaa3b12b4dee39e9fe385d8b9cdb94fc7a899a41466af4d7e58c8630aa01d2",
+    "src/espresso_m1/diagnostics.py": "5575770c0c7a0cea2744b624661f4038cb12004d8a50d1ce8a41627f0bff48c6",
+    "src/espresso_m1/driver.py": "f08ee3f112a1c48454af463db1b3126cf9b537fd4944dfae573a127ceba75867",
+    "src/espresso_m1/grid.py": "b63380c9272a64d4c77b1184ce4d08f2e72d1e951f8ee44d3439712e2772e256",
+    "src/espresso_m1/params.py": "ac00eb7f673020b2da4d3dd1ead4b1cd576137d6e44084b8269f049b8dc25d51",
+    "src/espresso_m1/solver.py": "c4ac9559869d8236ed7b8004adca6a557366e2752b5992df1f0cb81c80894900",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/conftest.py": "1b530f310efb08c9e6990da9ab7349406f36f3a8fb8e0d5805c6a3f339717724",
+    "tests/test_analytical.py": "5dcbc635e59f837e388030b71243ec3e0dc57b633b0bb3bdb6d7ee5a3fb0ee01",
+    "tests/test_boundaries.py": "77819fb2f027de295bd8d6f1469964735e1219b8ec39d7fe8eb8c1a84a93adf0",
+    "tests/test_conservation.py": "4438f6f635fab2daf59baf8e46b5dfa1b2219d7cc8c4478139d9e8de7c07a51d",
+    "tests/test_params.py": "decddd50e15f1eb6099735c0e951737126cd2068c34d2562e661a0a1ee229db6",
+    "tests/test_physics.py": "63967a2a87606db6c46071222a6e5bb7752dd6a88885ac73de3eb8b35134256a"
+  }
+}

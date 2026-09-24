@@ -1,0 +1,4 @@
+time_s,beverage_mass_g,pressure_Pa,pressure_location,temperature_K,temperature_location
+0.0,0.0,,,,
+0.5,0.1,,,,
+1.0,0.4,,,,

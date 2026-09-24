@@ -1,0 +1,12 @@
+time_s,beverage_mass_g,pressure_Pa,pressure_location,temperature_K,temperature_location
+0.0,0.0,,,,
+1.0,1.2,,,,
+2.0,2.4,,,,
+3.0,3.6,,,,
+4.0,4.8,,,,
+5.0,6.0,,,,
+6.0,7.2,,,,
+7.0,8.4,,,,
+8.0,9.6,,,,
+9.0,10.8,,,,
+10.0,12.0,,,,

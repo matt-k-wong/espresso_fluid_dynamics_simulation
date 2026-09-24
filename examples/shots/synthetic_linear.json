@@ -1,0 +1,65 @@
+{
+  "schema_version": "gs3_shot_v1",
+  "shot_id": "synthetic-linear-01",
+  "source": "synthetic",
+  "machine": {
+    "profile_id": "example-av-reservoir",
+    "feed": "AV reservoir"
+  },
+  "beans": {
+    "batch": "example-batch",
+    "roast_date": "2026-09-01"
+  },
+  "grinder": {
+    "name": "example-grinder",
+    "setting": 12
+  },
+  "dose_g": 18.0,
+  "basket_id": "example-58mm-double",
+  "beverage_target_g": 36.0,
+  "temperature": {
+    "setting_C": 93.0,
+    "location": "boiler display (not puck)"
+  },
+  "prebrew": null,
+  "time_zero": "already_wet",
+  "notes": "Synthetic linear mass trace m(t)=1.2*t g for importer/metric correctness only. Known derivative 1.2 g/s. Not measured data. Time zero is the modeled already-wet state.",
+  "cup": {
+    "TDS_pct": 8.0,
+    "method": "example refractometer protocol",
+    "uncertainty_pct": 0.2
+  },
+  "samples": [
+    {"time_s": 0.0, "beverage_mass_g": 0.0},
+    {"time_s": 1.0, "beverage_mass_g": 1.2},
+    {"time_s": 2.0, "beverage_mass_g": 2.4},
+    {"time_s": 3.0, "beverage_mass_g": 3.6},
+    {"time_s": 4.0, "beverage_mass_g": 4.8},
+    {"time_s": 5.0, "beverage_mass_g": 6.0},
+    {"time_s": 6.0, "beverage_mass_g": 7.2},
+    {"time_s": 7.0, "beverage_mass_g": 8.4},
+    {"time_s": 8.0, "beverage_mass_g": 9.6},
+    {"time_s": 9.0, "beverage_mass_g": 10.8},
+    {"time_s": 10.0, "beverage_mass_g": 12.0},
+    {"time_s": 11.0, "beverage_mass_g": 13.2},
+    {"time_s": 12.0, "beverage_mass_g": 14.4},
+    {"time_s": 13.0, "beverage_mass_g": 15.6},
+    {"time_s": 14.0, "beverage_mass_g": 16.8},
+    {"time_s": 15.0, "beverage_mass_g": 18.0},
+    {"time_s": 16.0, "beverage_mass_g": 19.2},
+    {"time_s": 17.0, "beverage_mass_g": 20.4},
+    {"time_s": 18.0, "beverage_mass_g": 21.6},
+    {"time_s": 19.0, "beverage_mass_g": 22.8},
+    {"time_s": 20.0, "beverage_mass_g": 24.0},
+    {"time_s": 21.0, "beverage_mass_g": 25.2},
+    {"time_s": 22.0, "beverage_mass_g": 26.4},
+    {"time_s": 23.0, "beverage_mass_g": 27.6},
+    {"time_s": 24.0, "beverage_mass_g": 28.8},
+    {"time_s": 25.0, "beverage_mass_g": 30.0},
+    {"time_s": 26.0, "beverage_mass_g": 31.2},
+    {"time_s": 27.0, "beverage_mass_g": 32.4},
+    {"time_s": 28.0, "beverage_mass_g": 33.6},
+    {"time_s": 29.0, "beverage_mass_g": 34.8},
+    {"time_s": 30.0, "beverage_mass_g": 36.0}
+  ]
+}
